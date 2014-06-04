@@ -20,15 +20,15 @@ png(filename = paste(path,"plot4.png",sep="/"), width = 480, height = 480, units
 
   par(mfrow=c(2,2))
   with(data, {
-    plot(data$DateTime, data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
-    plot(data$DateTime, data$Voltage, type="l", ylab="Voltage", xlab="datetime")
-    plot(data$DateTime, data$Sub_metering_1,type="n", ylab="Energy sub metering", xlab="")
-      lines(data$DateTime, data$Sub_metering_1,type="l", col ="Black")
-      lines(data$DateTime, data$Sub_metering_2,type="l", col ="Red")
-      lines(data$DateTime, data$Sub_metering_3,type="l", col ="Blue")
+    plot(DateTime, Global_active_power, type="l", xlab="", ylab="Global Active Power")
+    plot(DateTime, Voltage, type="l", ylab="Voltage", xlab="datetime")
+    plot(DateTime, Sub_metering_1,type="n", ylab="Energy sub metering", xlab="")
+      lines(DateTime, Sub_metering_1,type="l", col ="Black")
+      lines(DateTime, Sub_metering_2,type="l", col ="Red")
+      lines(DateTime, Sub_metering_3,type="l", col ="Blue")
       legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=c(1,1,1), 
              col = c("Black", "Red", "Blue"), bty = "n")
-    plot(data$DateTime, data$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
+    plot(DateTime, Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
   })
 
 dev.off()
